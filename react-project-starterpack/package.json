@@ -7,7 +7,10 @@
     "start:back": "nodemon",
     "start:front": "webpack-dev-server --mode-development",
     "seed": "node db/seeds.js",
-    "test": "mocha test/**/*_spec.js --require test/helper --recursive --exit"
+    "test": "mocha test/**/*_spec.js --require test/helper --recursive --exit",
+    "serve": "webpack-dev-server --mode=development",
+    "build": "webpack -p",
+    "start": "node index"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
