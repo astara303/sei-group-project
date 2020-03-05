@@ -8,6 +8,8 @@ const logger = require('./lib/logger')
 const router = require('./config/router')
 const errorHandler = require('./lib/errorHandler')
 
+require('dotenv').config()
+
 mongoose.connect(dbURI, { useNewUrlParser: true , useUnifiedTopology: true }, (err) => {
   if (err) return console.log(err)
   console.log('Mongo is connected')
