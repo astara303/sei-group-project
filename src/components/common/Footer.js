@@ -17,7 +17,7 @@ class Footer extends React.Component {
 
   getWeather = async () => {
     try {
-      const res = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=London&appid=${weatherToken}`)
+      const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=London&appid=${weatherToken}`)
       this.setState({ weather: res.data })
     } catch (err){
       console.log(err)
