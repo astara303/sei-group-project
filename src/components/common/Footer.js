@@ -35,7 +35,7 @@ class Footer extends React.Component {
             <h2 className="has-text-weight-normal">Wind Speed: {this.state.weather.wind.speed} km</h2>
             <h2>{this.state.weather.weather[0].description}</h2>
             <figure className="image-card">
-              <img src={`http://openweathermap.org/img/wn/${this.state.weather.weather[0].icon}.png`} alt={this.state.weather.weather[0].main} />
+              <img src={`https://openweathermap.org/img/wn/${this.state.weather.weather[0].icon}.png`} alt={this.state.weather.weather[0].main} />
             </figure>
           </div>
           <div className="column is-half-mobile is-one-half-desktop" id="socialMedia">
