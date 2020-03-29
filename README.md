@@ -28,12 +28,12 @@ You can visit the site _[here](https://geocachr.herokuapp.com/)_.
 - Heroku
 - GitHub
 
-My main responsibilities include:
+My main responsibilities included:
 - Coding the back end of the product using Express.js, Node.js and MongoDB.
 - Testing of the back end and updating tests as needed using Mocha, Chai and Supertest.
 - Creating virtual schemas for the profile page, and implementing their functionality on the React front end.
 
-My main takeaway from this project was I am a BIG fan of coding the back end with Express. It was so fun to have control over what is "behind the curtain" for a fully functioning website. There were challenges with the front end that I could easily solve in the back end, like populating models and data when needed in the controllers in order to properly authorize users.
+My biggest takeaway from this project is that I am definitely a fan of coding the back end with Express. It was so fun to have control over what is "behind the curtain" for a fully functioning website. There were challenges with the front end that I could easily solve in the back end, such as populating models and data when needed in the controllers in order to properly authorize users.
 
 ## Usage
 
@@ -83,24 +83,24 @@ I needed to make a similar button for users who left a comment on a trail. I wan
 
 ```
 {this.state.trail.completion.map(complete => {
-                  return <div key={complete._id}>
-                    <div className='box'>
-                      <p>{complete.user.username}</p>
-                      <div className="media-left">
-                        <figure className="image is-64x64">
-                          <img src={complete.image} />
-                        </figure>
-                      </div>
-                      <div className='media-content'>
-                        <div className='content'>
-                          <p>{complete.text}</p>
-                        </div>
-                      </div>
-                    </div>
-                    {this.isCompleteOwner(complete) && <button onClick={() => this.handleCompleteDelete(complete)} className="button is-danger">Delete my comment</button>}
-                  </div>
-                })
-                }
+  return <div key={complete._id}>
+    <div className='box'>
+      <p>{complete.user.username}</p>
+        <div className="media-left">
+          <figure className="image is-64x64">
+            <img src={complete.image} />
+          </figure>
+         </div> 
+           <div className='media-content'>
+              <div className='content'>
+                <p>{complete.text}</p>
+              </div>
+            </div>
+          </div>
+            {this.isCompleteOwner(complete) && <button onClick={() => this.handleCompleteDelete(complete)} className="button is-danger">Delete my comment</button>}
+          </div>
+        })
+}
 ```
 
 I wrote the back-end models and the virtual schemas that connected to those models: created trails, saved trails, and completed trails. This was the foundation for the user profile. I added "save" buttons onto the trails that made it possible to connect that trail to that user.
