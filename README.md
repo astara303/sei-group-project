@@ -28,45 +28,12 @@ You can visit the site _[here](https://geocachr.herokuapp.com/)_.
 - Heroku
 - GitHub
 
-My main responsibilities were:
-- Coding the back end of the product.
-- Testing of the back end and updating tests as needed.
-- Creating virtual schemas for the profile page, and implementing them on the React front end.
+My main responsibilities include:
+- Coding the back end of the product using Express.js, Node.js and MongoDB.
+- Testing of the back end and updating tests as needed using Mocha, Chai and Supertest.
+- Creating virtual schemas for the profile page, and implementing their functionality on the React front end.
 
-I wrote the back-end models and the virtual schemas that connected to those models: created trails, saved trails, and completed trails. This was the foundation for the user profile. I added "save" buttons onto the trails that made it possible to connect that trail to that user.
-
-```
-userSchema.virtual('createdTrails', {
-  ref: 'Trail',
-  localField: '_id',
-  foreignField: 'user'
-})
-
-userSchema.virtual('likedTrails', {
-  ref: 'Trail',
-  localField: '_id',
-  foreignField: 'likes.user'
-})
-
-userSchema.virtual('completedTrails', {
-  ref: 'Trail',
-  localField: '_id',
-  foreignField: 'completion.user'
-})
-
-userSchema
-  .set('toJSON', {
-    virtuals: true,
-    transform(doc, json) {
-      delete json.password
-      delete json.email
-      return json
-    }
-  })
-```
-
-<img src="https://i.ibb.co/0cxqYK8/Screenshot-2020-03-29-at-10-18-27.png" width="275" height="150">
-<img src="https://i.imgur.com/M12YUNe.png" width="250" height="200">
+My main takeaway from this project was I am a BIG fan of coding the back end with Express. It was so fun to have control over what is "behind the curtain" for a fully functioning website. There were challenges with the front end that I could easily solve in the back end, like populating models and data when needed in the controllers in order to properly authorize users.
 
 ## Usage
 
@@ -83,8 +50,6 @@ You may then click on any of the trail cards and see the information you need to
 4. At the bottom of the page is the "completion" section. If you have completed the trail, you may leave a comment on that trail.
 
 ## Functionality
-
-The trails:
 
 The trail model was built to include clues for the scavenger hunt game, and longitude and latitude to display the location of the trail on a map (using Mapbox), and a post code for quick identification of the area for the user.
 
@@ -137,6 +102,41 @@ I needed to make a similar button for users who left a comment on a trail. I wan
                 })
                 }
 ```
+
+I wrote the back-end models and the virtual schemas that connected to those models: created trails, saved trails, and completed trails. This was the foundation for the user profile. I added "save" buttons onto the trails that made it possible to connect that trail to that user.
+
+```
+userSchema.virtual('createdTrails', {
+  ref: 'Trail',
+  localField: '_id',
+  foreignField: 'user'
+})
+
+userSchema.virtual('likedTrails', {
+  ref: 'Trail',
+  localField: '_id',
+  foreignField: 'likes.user'
+})
+
+userSchema.virtual('completedTrails', {
+  ref: 'Trail',
+  localField: '_id',
+  foreignField: 'completion.user'
+})
+
+userSchema
+  .set('toJSON', {
+    virtuals: true,
+    transform(doc, json) {
+      delete json.password
+      delete json.email
+      return json
+    }
+  })
+```
+
+<img src="https://i.ibb.co/0cxqYK8/Screenshot-2020-03-29-at-10-18-27.png" width="275" height="150">
+<img src="https://i.imgur.com/M12YUNe.png" width="250" height="200">
 
 ## Needs Improvement
 
