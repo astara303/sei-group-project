@@ -51,6 +51,8 @@ You may then click on any of the trail cards and see the information you need to
 
 ## Functionality
 
+__Trails: Model__
+
 The trail model was built to include clues for the scavenger hunt game, and longitude and latitude to display the location of the trail on a map (using Mapbox), and a post code for quick identification of the area for the user.
 
 ```
@@ -74,6 +76,9 @@ const trailSchema = new mongoose.Schema({
 ```
 
 When creating a trail the user does not have to include the longitude and latitude. We made Mapbox a part of the Create a New Trail form to allow users to drop a pin on the map, and the longitude and latitidue of that pin is saved to state and then sent as a POST request with the rest of the new trail information to our Mongo Database.
+
+
+__Trails: Authorization__
 
 I used authorization with jwt to check if a user created a trail they are viewing. If they did, only this user has access to edit or delete buttons on the trail.
 
@@ -102,6 +107,9 @@ I needed to make a similar button for users who left a comment on a trail. I wan
         })
 }
 ```
+
+
+__User Model: Virtual Schemas__
 
 I wrote the back-end models and the virtual schemas that connected to those models: created trails, saved trails, and completed trails. This was the foundation for the user profile. I added "save" buttons onto the trails that made it possible to connect that trail to that user.
 
