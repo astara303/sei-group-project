@@ -49,7 +49,11 @@ You may then click on any of the trail cards and see the information you need to
 3. On the right of the page are the clues. They are hidden until the user clicks on them, so that they may follow the first clue without giving away the second and third.
 4. At the bottom of the page is the "completion" section. If you have completed the trail, you may leave a comment on that trail.
 
-## Functionality
+<img src="https://i.imgur.com/cIGZ6je.png" width="600" height="375">
+
+<img src="https://i.imgur.com/kgCtvcM.png" width="600" height="100">
+
+## Functionality: Successes and Challenges
 
 __Trails: Model__
 
@@ -77,6 +81,7 @@ const trailSchema = new mongoose.Schema({
 
 When creating a trail the user does not have to include the longitude and latitude. We made Mapbox a part of the Create a New Trail form to allow users to drop a pin on the map, and the longitude and latitidue of that pin is saved to state and then sent as a POST request with the rest of the new trail information to our Mongo Database.
 
+<img src="https://i.imgur.com/HHUw2n3.png" width="525" height="275">
 
 __Trails: Authorization__
 
@@ -107,7 +112,6 @@ I needed to make a similar button for users who left a comment on a trail. I wan
         })
 }
 ```
-
 
 __User Model: Virtual Schemas__
 
@@ -146,9 +150,25 @@ userSchema
 <img src="https://i.ibb.co/0cxqYK8/Screenshot-2020-03-29-at-10-18-27.png" width="275" height="150">
 <img src="https://i.imgur.com/M12YUNe.png" width="250" height="200">
 
+## Key Learnings
+
+- I learned how to work with a group on GitHub by pushing, pulling, and merging appropriately. 
+    - We would come across conflicts, but we would take our time and make sure the code was properly updated.
+    - Splitting up and organising the work was surprisingly easy. One member worked on all the Mapbox code, another member focused on all the forms, and another member on the CSS and Bulma Framework. Our merge conflicts usually appeared when one member had been styling a page that another member had been writing logic for.
+
+- Parameters of a function are very important and useful.
+  - Previously, I had felt that leaving the parameters of a function blank lead to more flexibility, and I didn't really understand why parameters were useful when I could supply the arguments myself. Using React, where calling functions is trickier than in vanilla JavaScript, I learned that providing parameters (like I discuss in the Trails: Authorization section of Functionality) can be what makes a function useful.
+  
+- With a working database, most of our daily internet experience (GETTING data, POSTING updates to that data, DELETING data) can be replicated.
+  - Writing the controllers and routers for data going into or coming from our database was so rewarding and helped me understand how the internet really _works_.
+
+
+
 ## Needs Improvement
 
 - The show page is not entirely mobile responsive. It was very difficult to work with Mapbox in terms of responsive viewing. On mobile, the clues display on top of the map at times. To fix this I would add a media query into the CSS to shift the clues below the map, rather than to its right, on certain view widths.
+
+  <img src="https://i.imgur.com/aqwFinO.png" width="350" height="200">
 
 - I would add even more thorough testing. I have recently learned how to test a React front end and I would certainly implement these skills.
 
